@@ -1,0 +1,34 @@
+Remote Code Execution via File Upload restriction bypass with path traversal in aimeos-core version <=2024.04
+
+Base Score: 8.8 HIGH
+
+Vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+
+Complexity: Easy
+
+Affected Products: Aimeos e-commerce framework
+
+Authentication: required
+
+Attacks: Path Traversal, File Upload restriction bypass using GIF89a header
+
+Gained Access: WebServer user ( Apache, Nginx, Etc… )
+
+Author:
+Shail Shah 
+Twitter: https://x.com/ssshah2131/
+LinkedIn: https://www.linkedin.com/in/ssshah2131
+
+To Reproduce:
+1. Login to your low privilege aimeos (role = editor) account & go to catalog --> Products --> Select any product --> Media 
+2. Upload PHP shell with GIF89a header using image upload feature. 
+3. Intercept the request using Burp Suite & change media.url parameter's extension to .php
+4. Note down the path of the shell which can be fetched in step 3 in the media.url parameter & forward the request
+5. The response will show "Error:Error saving data" but the shell will be uploaded at the above path.
+6. Navigate to the shell path noted in step 4 to execute remote code
+
+References:
+https://drive.google.com/file/d/1n5_t-zmKHbx3H47xdhR5kuHTDc0Gxur3/view?usp=sharing
+https://github.com/aimeos/aimeos-core/commit/5eea7aa933ac7402044bc6d282f96fba44475ee2
+https://github.com/aimeos/aimeos-core/commit/13e163126adff48f987b3b6faca28551effe0205
+https://drive.google.com/file/d/1QJWwaDB6smLCuNp10yZKWgpELTQJax31/view?usp=sharing
