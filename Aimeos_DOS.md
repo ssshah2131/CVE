@@ -1,4 +1,4 @@
-**Denial of service vulnerability in SaaS and marketplace (multivendor) setups by exploting IDOR in aimeos-core**
+**Aimeos denial of service vulnerability in SaaS and marketplace setups**
 
 **Base Score**: 5.5 Medium
 
@@ -41,4 +41,4 @@ LinkedIn: https://www.linkedin.com/in/ssshah2131
 5. https://github.com/aimeos/aimeos-core/commit/e933345915fc0cfafc6a011b853bc0228a61a45f
 6. https://github.com/aimeos/aimeos-core/compare/2022.10.16...2022.10.17
 7. https://github.com/aimeos/aimeos-core/compare/2023.10.16...2023.10.17
-8. https://github.com/aimeos/aimeos-core/compare/2024.04.6...2024.04.7 **
+8. https://github.com/aimeos/aimeos-core/compare/2024.04.6...2024.04.7
