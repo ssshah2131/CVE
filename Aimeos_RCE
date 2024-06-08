@@ -1,4 +1,4 @@
-Remote Code Execution via File Upload restriction bypass with path traversal in aimeos-core version <=2024.04
+Remote Code Execution via File Upload restriction bypass with path traversal in aimeos-core version < 2024.04.5
 
 Base Score: 8.8 HIGH
 
@@ -6,18 +6,23 @@ Vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
 
 Complexity: Easy
 
-Affected Products: Aimeos e-commerce framework
+Vulnerable Products: aimeos-core
+
+Vulnerable Versions:
+>= 2024.04.1, < 2024.04.5
+
+Patched versions:
+2024.04.5
+
+Affected Products: 
+1. Aimeos shop and e-commerce framework laravel
+2. Aimeos shop and e-commerce framework Typo3 extention
 
 Authentication: required
 
 Attacks: Path Traversal, File Upload restriction bypass using GIF89a header
 
 Gained Access: WebServer user ( Apache, Nginx, Etc… )
-
-Author:
-Shail Shah 
-Twitter: https://x.com/ssshah2131/
-LinkedIn: https://www.linkedin.com/in/ssshah2131
 
 To Reproduce:
 1. Login to your low privilege aimeos (role = editor) account & go to catalog --> Products --> Select any product --> Media 
@@ -28,7 +33,13 @@ To Reproduce:
 6. Navigate to the shell path noted in step 4 to execute remote code
 
 References:
+https://github.com/aimeos/aimeos-core/security/advisories/GHSA-rhc2-23c2-ww7c
+https://github.com/advisories/GHSA-rhc2-23c2-ww7c
 https://drive.google.com/file/d/1n5_t-zmKHbx3H47xdhR5kuHTDc0Gxur3/view?usp=sharing
 https://github.com/aimeos/aimeos-core/commit/5eea7aa933ac7402044bc6d282f96fba44475ee2
 https://github.com/aimeos/aimeos-core/commit/13e163126adff48f987b3b6faca28551effe0205
-https://drive.google.com/file/d/1QJWwaDB6smLCuNp10yZKWgpELTQJax31/view?usp=sharing
+
+Author:
+Shail Shah 
+Twitter: https://x.com/ssshah2131/
+LinkedIn: https://www.linkedin.com/in/ssshah2131
